@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>Velocity v201213189</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="images/favicon.ico" /> 
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/selectivizr-min.js"></script>
+<link rel="stylesheet" href="css/ie_7.css" type="text/css" />
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="js/all-in-one-min.js"></script>
+<script type="text/javascript" src="js/setup.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+	$('#demo-side-bar').removeAttr('style');
+});
+</script>
+<style type="text/css">
+.demobar{display:none;}
+#demo-side-bar{top:53px!important;left:90%!important;display:block!important;}
+</style>
+ <!--Dynamically creates ads markup-->
+   <?php include("http://www.egrappler.com/ads-header.php"); ?>
+	<!-- Header -->
+	<header class="header_bg clearfix">
+		<div class="container clearfix">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				<h1>Agencia de Transporte Velocity</h1>
+			</div>
+			 <!-- /Logo -->
+			
+			<!-- Master Nav -->
+			<nav class="main-menu">
+				<ul>
+					<li><a href="http://localhost:3000">Bienvenido</a></li>
+					<li><a href="http://localhost:3000/registro">Registrate</a></li>
+					<li><a href="http://localhost:3000/acercade">Conoscanos</a></li>
+				</ul>
+			</nav>
+			<!-- /Master Nav -->
+		</div>
+	</header>
+	<!-- /Header -->
+	
+	<div class="clear"></div>
+	
+	<!-- Slider -->
+    <div class="bannerbg">
+        <div class="container clearfix">
+                <div class="flexslider" >
+                <ul class="slides">
+                    <li>
+                        <img src="images/fslide01.jpg" alt="" />
+                        <p class="flex-caption">Agencia de Transpporte Velocity</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/fslide02.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <img src="images/fslide03.jpg" alt="" />
+                        <p class="flex-caption">Agencia de Transpporte Velocity</p>
+                    </li>
+                    <li>
+                        <img src="images/fslide04.jpg" alt="" />
+                    </li>
+                    
+                    <li>
+                        <img src="images/fslide05.jpg" alt="" />
+                    </li>
+                    
+                    <li>
+                        <img src="images/fslide06.jpg" alt="" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<!-- /Slider -->
+	
+	<div class="clear padding40"></div>
+
+	
+	<!-- Content -->
+	<section class="container clearfix">
+	
+		<!-- START FEATURED COLUMNS -->
+		<div class="col_1_3">
+			<div class="features">
+				<div class="title clearfix">
+					<img src="images/code-icon.png" alt="" class="alignleft" />
+					<h3>Inicio Sesion</h3>
+
+				</div>
+				 <form action="http://localhost:3000" method="POST">
+					User:<br>
+					<input type="text" name="usr">
+					<br>
+					Password:<br>
+					<input type="password" name="pass">
+					<br>
+					<br>
+					<center>
+					<input type="submit" value="Ok">
+					</center>
+				</form> 
+			</div>
+		</div>
+		<div class="col_1_3">
+			<div class="features">
+				<div class="title clearfix">
+					<img src="images/intuitive-icon.png" alt="" class="alignleft" />
+					<h3>De vacaciones por Guatemala</h3>
+
+				</div>
+				<p>Guatemala cuenta con una gran cantidad de lugares turisticos para visitar.
+					Velocity cuenta con excursiones a los sitios mas hermosos de este pais. 
+					Entre ellos podemos mencionar Tikal, la Laguna de Lachua, las Ruinas de Lanckin,
+					Xocomil y Xetulul. <br /> <!--a href="#">more info</a></p --> 
+			</div>
+		</div>
+		<div class="col_1_3 last">
+			<div class="features">
+				<div class="title clearfix">
+					<img src="images/businesses-icon.png" alt="" class="alignleft" />
+					<h3>Registrate</h3>
+					
+				</div>
+				<p>Registrate en nuestro portal y desfruta de nuestro servicio online
+				con el que podras reservar, comprar y gestionar tus viajes a cualquier parte del pais.
+				<br /> <a href="http://localhost:3000/registro">Registrate</a></p> 
+			</div>
+		</div>
+		<!-- END FEATURED COLUMNS -->
+		
+		<div class="clear padding10"></div>
+		
+		<!--div class="recent_works_left">
+			<h2 class="red">Featured Work</h2>
+		</div-->
+		<div class="recent_works_arrows">
+			<a href="#" class="prev_item"></a><a href="#" class="next_item"></a>
+		</div>
+		
+		<div class="clear"></div>
+		<div class="line"></div>
+		
+	</section>
+	<!-- /Content -->
+		
+	
+    </div>
+    <!--wrapper end-->
+	<!--Dynamically creates analytics markup-->
+	 <?php include("http://www.egrappler.com/analytics.php");?>
+</body>
+</html>
