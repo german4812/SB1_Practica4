@@ -11,6 +11,15 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var registro = require('./routes/registro');
 var acercade = require('./routes/acercade');
+var sesion_admin = require('./routes/sesion_admin');
+var sesion_cliente = require('./routes/sesion_cliente');
+var agregar_bus = require('./routes/agregar_bus');
+var eliminar_bus = require('./routes/eliminar_bus');
+var editar_bus = require('./routes/editar_bus');
+var crear_punto = require('./routes/crear_punto');
+var crear_ruta = require('./routes/crear_ruta');
+var rutaxpunto = require('./routes/rutaxpunto');
+var rutaxbus = require('./routes/rutaxbus');
 
 var app = express();
 
@@ -32,6 +41,15 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/registro', registro);
 app.use('/acercade', acercade);
+app.use('/sesion_admin', sesion_admin);
+app.use('/sesion_cliente', sesion_cliente);
+app.use('/agregar_bus', agregar_bus);
+app.use('/eliminar_bus', eliminar_bus);
+app.use('/editar_bus', editar_bus);
+app.use('/crear_punto', crear_punto);
+app.use('/crear_ruta', crear_ruta);
+app.use('/rutaxpunto', rutaxpunto);
+app.use('/rutaxbus', rutaxbus);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

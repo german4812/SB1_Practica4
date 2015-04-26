@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
+  res.render('editar_bus', { title: 'Express' });
 });
 
 router.post('/', function(req, res, next) {
@@ -19,23 +19,27 @@ router.post('/', function(req, res, next) {
 	});
 
 	//CARGA DE VARIABLES
-	var nombre = req.body.name;
-	var correo = req.body.email;
-	var pass = req.body.password;
+	var placa = req.body.placa;
+	var modelo = req.body.modelo;
+	var tipo = req.body.lista;
 	connection.connect();
 	//usuario, nombre, rol, correo, pass, telefono
-	var query = 'INSERT INTO USUARIO VALUES (\''+nombre + '\', \'usr\', \''+ correo + '\', \'' + pass + '\', 12345) ;'; 
+	var query = 'UPDATE BUS SET modelo = '+modelo+', tipo_bus = '+ tipo +' WHERE bus = '+ placa + ';'
+	var msj = '';
 	connection.query(query, function(err, rows, fields){
 		if (!err){
 			connection.end();
 			console.log('Exitooooo!!!');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ha sido creada' });
+			res.render('editar_bus', { title: 'Express', mensaje: 'Datos editados exitosamente' });
 		}else{
 			connection.end();
 			console.log('FAIL!!! x_x');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ya existe' });
+			console.log(query);
+			res.render('editar_bus', { title: 'Express', mensaje: 'No se encontro el bus' });
 		}
 	});
+
 });
 
 module.exports = router;
+

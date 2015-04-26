@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
+  res.render('agregar_bus', { title: 'Express' });
 });
 
 router.post('/', function(req, res, next) {
-	console.log('Iniciando Registro...');
+	console.log('Agregando Bus...');
 	//INICIO DE REGISTRO DE USUARIO A LA BASE DE DATOS
 	var mysql = require('mysql');
 	var connection = mysql.createConnection({
@@ -19,21 +19,23 @@ router.post('/', function(req, res, next) {
 	});
 
 	//CARGA DE VARIABLES
-	var nombre = req.body.name;
-	var correo = req.body.email;
-	var pass = req.body.password;
+	var placa = req.body.placa;
+	var modelo = req.body.modelo;
+	var tipo = req.body.lista;
 	connection.connect();
 	//usuario, nombre, rol, correo, pass, telefono
-	var query = 'INSERT INTO USUARIO VALUES (\''+nombre + '\', \'usr\', \''+ correo + '\', \'' + pass + '\', 12345) ;'; 
+	var query = 'INSERT INTO BUS(bus, modelo, tipo_bus) VALUES ('+placa + ', \''+ modelo + '\', ' + tipo + ') ;'; 
+	var msj = '';
 	connection.query(query, function(err, rows, fields){
 		if (!err){
 			connection.end();
 			console.log('Exitooooo!!!');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ha sido creada' });
+			res.render('agregar_bus', { title: 'Express', mensaje: 'Bus insertado'});
 		}else{
 			connection.end();
 			console.log('FAIL!!! x_x');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ya existe' });
+			console.log(query);
+			res.render('agregar_bus', { title: 'Express', mensaje: 'La placa ya ha sido registrada'});
 		}
 	});
 });

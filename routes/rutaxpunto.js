@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
+  res.render('rutaxpunto', { title: 'Express' });
 });
 
 router.post('/', function(req, res, next) {
-	console.log('Iniciando Registro...');
+	console.log('Agregando Bus...');
 	//INICIO DE REGISTRO DE USUARIO A LA BASE DE DATOS
 	var mysql = require('mysql');
 	var connection = mysql.createConnection({
@@ -19,23 +19,26 @@ router.post('/', function(req, res, next) {
 	});
 
 	//CARGA DE VARIABLES
-	var nombre = req.body.name;
-	var correo = req.body.email;
-	var pass = req.body.password;
+	var punto = req.body.placa;
+	var ruta = req.body.modelo;
+	var orden = req.body.orden;
 	connection.connect();
 	//usuario, nombre, rol, correo, pass, telefono
-	var query = 'INSERT INTO USUARIO VALUES (\''+nombre + '\', \'usr\', \''+ correo + '\', \'' + pass + '\', 12345) ;'; 
+	var query = 'INSERT INTO PUNTOXRUTA(punto, ruta, orden) VALUES ('+punto + ', '+ ruta + ', ' + orden + ') ;'; 
+	var msj = '';
 	connection.query(query, function(err, rows, fields){
 		if (!err){
 			connection.end();
 			console.log('Exitooooo!!!');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ha sido creada' });
+			mensaje = 'Bus Insertado';
 		}else{
 			connection.end();
 			console.log('FAIL!!! x_x');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ya existe' });
+			mensaje = 'No se pudo insertar';
 		}
 	});
+
+  res.render('rutaxpunto', { title: 'Express', mensaje: msj});
 });
 
 module.exports = router;

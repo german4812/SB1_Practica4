@@ -73,9 +73,9 @@ $(window).load(function(){
         	<p>Esta plataforma consiste en el sistema de reservaciones de la agencia de buses Velocity. Esta se 
 			se desarrolla de forma ágil, con un diseño sobrio y fácil de utilizar. A partir de esta plataforma se le permite tanto a un usuario administrador a gestionar todas las modificaciones a la base de datos pertinente a su cargo.</p>
             
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>El codigo esta distribuido dentro de una aplicacion en Node. Esto lo hace una aplicacion orientada a eventos, asincrona y unihilo. Cuenta con un portal desde el cual se puede establecer sesion, registrarse al portal y verificar la informacion pertinente a la aplicacion. Una vez establecida sesion, se puede realizar una serie de tareas, dependiendo de los privilegios de usuarios. </p>
             
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Los dos tipos de usuario son el tipo administrador y el cliente. El usuario administrador tiene acceso a la gestion de buses, de puntos, de rutas y de viajes. Por otro lado los usuarios clientes tienen acceso a la visualizacion de viajes, de sus facturas y a la gestion de los tickets, ya sea reservacion o compra de los boletos.</p>
         </div>
         
         

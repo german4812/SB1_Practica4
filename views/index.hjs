@@ -38,8 +38,10 @@ $(window).load(function(){
 	<header class="header_bg clearfix">
 		<div class="container clearfix">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" alt="" /></a>
-				<h1>Agencia de Transporte Velocity</h1>
+				<a href="http://localhost:3000">
+				<img src="images/intuitive-icon.png" alt="" class="alignleft" />
+				</a>
+				<font color ="white", size="7">Velocity</font>
 			</div>
 			 <!-- /Logo -->
 			
@@ -106,6 +108,9 @@ $(window).load(function(){
 
 				</div>
 				 <form action="http://localhost:3000" method="POST">
+				 	<a href="http://localhost:3000/sesion_cliente">Login Cliente</a>
+				 	<a href="http://localhost:3000/sesion_admin">Login Admin</a>
+				 	<br>
 					User:<br>
 					<input type="text" name="usr">
 					<br>
@@ -114,7 +119,7 @@ $(window).load(function(){
 					<br>
 					<br>
 					<center>
-					<input type="submit" value="Ok">
+					<input type="submit" value="ok">
 					</center>
 				</form> 
 			</div>

@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
+  res.render('eliminar_bus', { title: 'Express' });
 });
 
 router.post('/', function(req, res, next) {
@@ -19,23 +19,24 @@ router.post('/', function(req, res, next) {
 	});
 
 	//CARGA DE VARIABLES
-	var nombre = req.body.name;
-	var correo = req.body.email;
-	var pass = req.body.password;
+	var placa = req.body.placa;
 	connection.connect();
 	//usuario, nombre, rol, correo, pass, telefono
-	var query = 'INSERT INTO USUARIO VALUES (\''+nombre + '\', \'usr\', \''+ correo + '\', \'' + pass + '\', 12345) ;'; 
+	var query = 'DELETE FROM BUS WHERE bus='+placa + ';'; 
+	var msj = '';
 	connection.query(query, function(err, rows, fields){
 		if (!err){
 			connection.end();
 			console.log('Exitooooo!!!');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ha sido creada' });
+			res.render('eliminar_bus', { title: 'Express', mensaje: 'Bus eliminado correctamente' });
 		}else{
 			connection.end();
 			console.log('FAIL!!! x_x');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ya existe' });
+			res.render('eliminar_bus', { title: 'Express', mensaje: 'No se encontro ningun bus'});
 		}
 	});
+
+  
 });
 
 module.exports = router;

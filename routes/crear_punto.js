@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
+  res.render('crear_punto', { title: 'Express' });
 });
 
 router.post('/', function(req, res, next) {
@@ -19,23 +19,26 @@ router.post('/', function(req, res, next) {
 	});
 
 	//CARGA DE VARIABLES
-	var nombre = req.body.name;
-	var correo = req.body.email;
-	var pass = req.body.password;
+	var latitud = req.body.latitud;
+	var longitud = req.body.longitud;
+	var nombre = req.body.nombre;
+	var precio = req.body.precio;
 	connection.connect();
 	//usuario, nombre, rol, correo, pass, telefono
-	var query = 'INSERT INTO USUARIO VALUES (\''+nombre + '\', \'usr\', \''+ correo + '\', \'' + pass + '\', 12345) ;'; 
+	var query = 'INSERT INTO PUNTO(latitud, longitud, nombre, precio) VALUES(' + latitud+ ', '+ longitud+ ', \''+nombre + '\', '+precio+ ');'
 	connection.query(query, function(err, rows, fields){
 		if (!err){
 			connection.end();
 			console.log('Exitooooo!!!');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ha sido creada' });
+			res.render('crear_punto', { title: 'Express', mensaje: 'Se ingreso el punto exitosamente'});
 		}else{
 			connection.end();
 			console.log('FAIL!!! x_x');
-			res.render('registro', { title: 'Express', mensaje: 'Su cuenta ya existe' });
+			console.log(query);
+			res.render('crear_punto', { title: 'Express', mensaje: 'No se pudo ingresar el punto deseado'});
 		}
 	});
 });
 
 module.exports = router;
+
